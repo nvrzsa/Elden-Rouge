@@ -49,6 +49,7 @@ public class driver {
 
                             break;
                         case 3:
+                            System.out.print("\nSUCCESSFULLY CREATED CHARACTER.");
                             GameLobby gameLobby = new GameLobby(player);
                             gameLobby.displayLobby();
         
