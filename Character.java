@@ -43,6 +43,10 @@ public class Character {
         return this.name;
     }
 
+    public int getLevel() {
+        return this.level;
+    }
+
     public void setClass(String jobClass){
         switch (jobClass){
             case "Vagabond":
