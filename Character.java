@@ -24,7 +24,7 @@ public class Character {
     }
 
     public void displayStats(){
-        System.out.println("Name: " + this.name);
+        System.out.println("\nName: " + this.name);
         System.out.println("Job Class: " + this.jobClass);
         System.out.println("Level: " + this.level);
         System.out.println("Health: " + this.health);

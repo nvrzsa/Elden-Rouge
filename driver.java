@@ -10,17 +10,17 @@ public class driver {
         String playerName, jobClass;
 
         do {
-            System.out.println("Welcome to Elden Rouge");
-            System.out.println("[1] START \n[2] EXIT");
-            System.out.print("Choice: ");
+            System.out.println("\nWELCOME TO ELDEN ROUGE\n");
+            System.out.println("[1] START \n[2] EXIT\n");
+            System.out.print("Choose an Option: ");
             choice = sc.nextInt();
 
             if (choice == 1) {
                 do {
                     player.displayStats();
-                    System.out.println("[1] INPUT NAME \n[2] SELECT JOB CLASS \n[3] CONFIRM \n[4] BACK");
+                    System.out.println("\n[1] INPUT NAME \n[2] SELECT JOB CLASS \n[3] CONFIRM \n[4] BACK");
 
-                    System.out.print("Choice: ");
+                    System.out.print("\nChoose an Option: ");
                     choice2 = sc.nextInt();
 
                     switch (choice2) {
@@ -49,7 +49,9 @@ public class driver {
 
                             break;
                         case 3:
-                            // Handle confirm
+                            GameLobby gameLobby = new GameLobby(player);
+                            gameLobby.displayLobby();
+        
                             break;
                         case 4:
                             break; // Will go back to the outer loop
