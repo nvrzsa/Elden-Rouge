@@ -47,7 +47,7 @@ public class Character {
         return this.level;
     }
 
-    public void setClass(String jobClass){
+    public boolean setClass(String jobClass){
         switch (jobClass){
             case "Vagabond":
                 this.jobClass = "Vagabond";
@@ -58,7 +58,7 @@ public class Character {
                 this.endurance = 11;
                 this.strength = 14;
                 this.faith = 9;
-                break;
+                return true;
             case "Samurai":
                 this.jobClass = "Samurai";
                 this.level = 9;
@@ -68,7 +68,7 @@ public class Character {
                 this.endurance = 13;
                 this.strength = 12;
                 this.faith = 9;
-                break;
+                return true;
             case "Warrior":
                 this.jobClass = "Warrior";
                 this.level = 8;
@@ -78,7 +78,7 @@ public class Character {
                 this.endurance = 11;
                 this.strength = 10;
                 this.faith = 8;
-                break;
+                return true;
             case "Hero":
                 this.jobClass = "Hero";
                 this.level = 7;
@@ -88,7 +88,7 @@ public class Character {
                 this.endurance = 12;
                 this.strength = 16;
                 this.faith = 8;
-                break;
+                return true;
             case "Astrologer":
                 this.level = 6;
                 this.jobClass = "Astrologer";
@@ -98,7 +98,7 @@ public class Character {
                 this.endurance = 9;
                 this.strength = 8;
                 this.faith = 7;
-                break;
+                return true;
             case "Prophet":
                 this.jobClass = "Prophet";
                 this.level = 7;
@@ -108,7 +108,10 @@ public class Character {
                 this.endurance = 8;
                 this.strength = 11;
                 this.faith = 16;
-                break;
+                return true;
+            default:
+                System.out.println("INVALID CLASS");
+                return false;
         }
     }
 }

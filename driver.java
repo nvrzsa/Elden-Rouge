@@ -5,6 +5,7 @@ public class driver {
         Scanner sc = new Scanner(System.in);
         Scanner sn = new Scanner(System.in);
         int choice, choice2;
+        boolean check1 = false, check2 = false;
         Area f1 = new Area(3, 8);
         Character player = new Character("", "", 0, 0, 0, 0, 0, 0, 0);
         String playerName, jobClass;
@@ -34,9 +35,11 @@ public class driver {
                             else if (playerName.length() > 25){
                                 playerName = playerName.substring(0, 25);
                                 player.setName(playerName);
+                                check1 = true;
                             }
                             else{
                                 player.setName(playerName);
+                                check1 = true;
                             }
 
                             break;
@@ -45,13 +48,16 @@ public class driver {
                             System.out.print("Choice: ");
                             jobClass = sn.nextLine();
 
-                            player.setClass(jobClass);
-
+                            if(player.setClass(jobClass) == true){
+                                check2 = true;
+                            }
                             break;
                         case 3:
-                            System.out.print("\nSUCCESSFULLY CREATED CHARACTER.");
-                            GameLobby gameLobby = new GameLobby(player);
-                            gameLobby.displayLobby();
+                            if(check1 == true && check2 == true){
+                                GameLobby gameLobby = new GameLobby(player);
+                                gameLobby.displayLobby();
+                            }
+                            
         
                             break;
                         case 4:
