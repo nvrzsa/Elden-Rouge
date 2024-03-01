@@ -19,7 +19,7 @@ public class GameLobby {
         while (true) {
             player.displayStats();
             System.out.println("\n[1] FAST TRAVEL \n[2] LEVEL UP \n[3] INVENTORY \n[4] SHOP \n[5] QUIT GAME\n");
-            System.out.print("Choose an Option: ");
+            System.out.print("CHOOSE AN OPTION: ");
             choice = scanner.nextInt();
 
             switch (choice) {
@@ -37,10 +37,10 @@ public class GameLobby {
                     break;
                 case 5:
                     // Quit the game
-                    System.out.println("Exiting the game lobby.");
+                    System.out.println("EXITING THE GAME LOBBY");
                     break;
                 default:
-                    System.out.println("Invalid choice");
+                    System.out.println("INVALID CHOICE");
                     break;
             }
         }
@@ -52,19 +52,19 @@ public class GameLobby {
         System.out.println("\nYOU HAVE CHOSEN: FAST TRAVEL\n");
 
         // Display available areas
-        System.out.println("AREA LIST:");
-        System.out.println("1. Stormveil Castle");
-        System.out.println("2. Raya Lucaria Academy");
-        System.out.println("3. The Elden Throne " + (isAreaLocked(3) ? "[LOCKED]" : ""));
+        System.out.println("AREA LIST:\n");
+        System.out.println("[1] STORMVEIL CASTLE");
+        System.out.println("[2] RAYA LUCARIA ACADEMY");
+        System.out.println("[3] THE ELDEN THRONE " + (isAreaLocked(3) ? "[LOCKED]" : ""));
 
-        System.out.print("CHOOSE AN AREA: ");
+        System.out.print("\nCHOOSE AN AREA: ");
         int chosenArea = scanner.nextInt();
 
         if (isValidArea(chosenArea)) {
             currentAreaIndex = chosenArea;
-            System.out.println("You have successfully fast-traveled to Area " + chosenArea);
+            System.out.println("\nYOU HAVE SUCCESSFULLY FAST-TRAVELLED TO AREA " + chosenArea);
         } else {
-            System.out.println("Invalid area selection");
+            System.out.println("\nINVALID AREA SELECTION! ");
         }
     }
 

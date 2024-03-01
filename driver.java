@@ -15,7 +15,7 @@ public class driver {
         do {
             System.out.println("\nWELCOME TO ELDEN ROUGE\n");
             System.out.println("[1] START \n[2] EXIT\n");
-            System.out.print("Choose an Option: ");
+            System.out.print("CHOOSE AN OPTION: ");
             choice = sc.nextInt();
 
             if (choice == 1) {
@@ -23,7 +23,7 @@ public class driver {
                     player.displayStats();
                     System.out.println("\n[1] INPUT NAME \n[2] SELECT JOB CLASS \n[3] CONFIRM \n[4] BACK");
 
-                    System.out.print("\nChoose an Option: ");
+                    System.out.print("\nCHOOSE AN OPTION: ");
                     choice2 = sc.nextInt();
 
                     switch (choice2) {
@@ -32,7 +32,7 @@ public class driver {
                             playerName = sn.nextLine();
 
                             if (playerName.length() < 1){
-                                System.out.println("Error, name must have minimum lenngth of 1");
+                                System.out.println("Error, name must have minimum length of 1");
                             }
                             else if (playerName.length() > 25){
                                 playerName = playerName.substring(0, 25);
