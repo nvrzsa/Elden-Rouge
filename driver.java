@@ -56,7 +56,7 @@ public class driver {
                             break;
                         case 3:
                             if(check1 == true && check2 == true){
-                                GameLobby gameLobby = new GameLobby(player);
+                                GameLobby gameLobby = new GameLobby(player, f1, f2, f3);
                                 gameLobby.displayLobby();
                             }
                             

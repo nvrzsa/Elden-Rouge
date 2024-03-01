@@ -22,18 +22,18 @@ public class Area {
 
     public void displayArea(){
         if(floor == 1){
-            for (int collumn = 0; collumn < length; collumn++){
+            for (int column = 0; column < length; column++){
                 for (int rows = 0; rows < width; rows++){
-                    if(collumn == position[1] && rows == position[0]){
+                    if(column == position[1] && rows == position[0]){
                         System.out.print(" P ");
                     }
-                    else if((collumn == spawnTile1[1] && rows == spawnTile1[0]) || (collumn == spawnTile2[1] && rows == spawnTile2[0])){
+                    else if((column == spawnTile1[1] && rows == spawnTile1[0]) || (column == spawnTile2[1] && rows == spawnTile2[0])){
                         System.out.print(" ? ");
                     }
-                    else if(collumn == doorTile1[1] && rows == doorTile1[0]){
+                    else if(column == doorTile1[1] && rows == doorTile1[0]){
                         System.out.print(" D ");
                     }
-                    else if(collumn == fastTile1[1] && rows == fastTile1[0]){
+                    else if(column == fastTile1[1] && rows == fastTile1[0]){
                         System.out.print(" F ");
                     }
                     else {
@@ -45,15 +45,15 @@ public class Area {
         }
         
         else if(floor == 2){
-            for (int collumn = 0; collumn < length; collumn++){
+            for (int column = 0; column < length; column++){
                 for (int rows = 0; rows < width; rows++){
-                    if(collumn == position[1] && rows == position[0]){
+                    if(column == position[1] && rows == position[0]){
                         System.out.print(" P ");
                     }
-                    else if((collumn == spawnTile3[1] && rows == spawnTile3[0]) || (collumn == spawnTile4[1] && rows == spawnTile4[0]) || (collumn == spawnTile5[1] && rows == spawnTile5[0]) || (collumn == spawnTile6[1] && rows == spawnTile6[0]) || (collumn == spawnTile7[1] && rows == spawnTile7[0]) || (collumn == spawnTile8[1] && rows == spawnTile8[0]) || (collumn == spawnTile9[1] && rows == spawnTile9[0]) || (collumn == spawnTile10[1] && rows == spawnTile10[0])){
+                    else if((column == spawnTile3[1] && rows == spawnTile3[0]) || (column == spawnTile4[1] && rows == spawnTile4[0]) || (column == spawnTile5[1] && rows == spawnTile5[0]) || (column == spawnTile6[1] && rows == spawnTile6[0]) || (column == spawnTile7[1] && rows == spawnTile7[0]) || (column == spawnTile8[1] && rows == spawnTile8[0]) || (column == spawnTile9[1] && rows == spawnTile9[0]) || (column == spawnTile10[1] && rows == spawnTile10[0])){
                         System.out.print(" ? ");
                     }
-                    else if((collumn == doorTile2[1] && rows == doorTile2[0]) || (collumn == doorTile3[1] && rows == doorTile3[0])){
+                    else if((column == doorTile2[1] && rows == doorTile2[0]) || (column == doorTile3[1] && rows == doorTile3[0])){
                         System.out.print(" D ");
                     }
                     else {
@@ -65,18 +65,18 @@ public class Area {
         }
 
         else if(floor == 3){
-            for (int collumn = 0; collumn < length; collumn++){
+            for (int column = 0; column < length; column++){
                 for (int rows = 0; rows < width; rows++){
-                    if(collumn == position[1] && rows == position[0]){
+                    if(column == position[1] && rows == position[0]){
                         System.out.print(" P ");
                     }
-                    else if((collumn == bossTile1[1] && rows == bossTile1[0])){
+                    else if((column == bossTile1[1] && rows == bossTile1[0])){
                         System.out.print(" B ");
                     }
-                    else if(collumn == doorTile4[1] && rows == doorTile4[0]){
+                    else if(column == doorTile4[1] && rows == doorTile4[0]){
                         System.out.print(" D ");
                     }
-                    else if(collumn == fastTile2[1] && rows == fastTile2[0]){
+                    else if(column == fastTile2[1] && rows == fastTile2[0]){
                         System.out.print(" F ");
                     }
                     else {
@@ -89,9 +89,9 @@ public class Area {
     }
 
     public boolean isDoor(){
-        int collumn = position[1];
+        int column = position[1];
         int rows = position[0];
-        if(collumn == doorTile1[1] && rows == doorTile1[0]){
+        if(column == doorTile1[1] && rows == doorTile1[0]){
             return true;
         }
         else{
@@ -100,14 +100,14 @@ public class Area {
     }
 
     public void move(String move){
-        int collumn = position[1];
+        int column = position[1];
         int row = position[0];
 
         if(move.equals("UP")){
-            collumn -= 1;
+            column -= 1;
         }
         else if(move.equals("DOWN")){
-            collumn += 1;
+            column += 1;
         }
         else if(move.equals("LEFT")){
             row -= 1;
@@ -116,8 +116,8 @@ public class Area {
             row += 1;
         }
 
-        if(row >= 0 && row < width && collumn >= 0 && collumn < length){
-            position[1] = collumn;
+        if(row >= 0 && row < width && column >= 0 && column < length) {
+            position[1] = column;
             position[0] = row;
         }
     }
