@@ -72,7 +72,30 @@ public class GameLobby {
             currentAreaIndex = chosenArea;
             System.out.println("\nYOU HAVE SUCCESSFULLY FAST-TRAVELLED TO AREA \n" + chosenArea);
 
-            f1.displayArea();
+            System.out.println("AVAILABLE FLOORS:\n");
+            System.out.println("[1] F1");
+            System.out.println("[2] F2");
+            System.out.println("[3] F3");
+
+            System.out.print("\nCHOOSE A FLOOR: ");
+            int chosenSubArea = scanner.nextInt();
+
+            switch (chosenSubArea) {
+                case 1:
+                    currentArea = f1;
+                    break;
+                case 2:
+                    currentArea = f2;
+                    break;
+                case 3:
+                    currentArea = f3;
+                    break;
+                default:
+                    System.out.println("Invalid sub-area choice");
+                    return;
+            }
+        
+            currentArea.displayArea();
         } else {
             System.out.println("\nINVALID AREA SELECTION! ");
         }
@@ -86,8 +109,8 @@ public class GameLobby {
                 break;
             }
 
-            f1.move(moveOption);
-            f1.displayArea();
+            currentArea.move(moveOption);
+            currentArea.displayArea();
         }
         
     }

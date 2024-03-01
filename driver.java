@@ -28,7 +28,7 @@ public class driver {
 
                     switch (choice2) {
                         case 1:
-                            System.out.println("Name(Minimum length of 1, Maximum length of 25): ");
+                            System.out.print("Name(Minimum length of 1, Maximum length of 25): ");
                             playerName = sn.nextLine();
 
                             if (playerName.length() < 1){
@@ -46,7 +46,7 @@ public class driver {
 
                             break;
                         case 2:
-                            System.out.println("Select Job Class: \nVagabond \nSamurai \nWarrior \nHero \nAstrologer \nProphet");
+                            System.out.println("SELECT JOB CLASS: \n[1] Vagabond \n[2] Samurai \n[3] Warrior \n[4] Hero \n[5] Astrologer \n[6] Prophet");
                             System.out.print("Choice: ");
                             jobClass = sn.nextLine();
 
