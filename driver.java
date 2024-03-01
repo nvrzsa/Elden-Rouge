@@ -6,7 +6,9 @@ public class driver {
         Scanner sn = new Scanner(System.in);
         int choice, choice2;
         boolean check1 = false, check2 = false;
-        Area f1 = new Area(3, 8);
+        Area f1 = new Area(3, 7, 1, 6, 1);
+        Area f2 = new Area(7, 7, 3, 6, 2);
+        Area f3 = new Area(5, 7, 2, 6, 3);
         Character player = new Character("", "", 0, 0, 0, 0, 0, 0, 0);
         String playerName, jobClass;
 
