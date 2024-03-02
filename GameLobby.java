@@ -4,6 +4,7 @@ public class GameLobby {
     private Character player;
     private Scanner scanner;
     private int currentAreaIndex;
+    private int floorNumber = 1;
     private Area currentArea;
 
     private Area f1;
@@ -72,7 +73,17 @@ public class GameLobby {
             currentAreaIndex = chosenArea;
             System.out.println("\nYOU HAVE SUCCESSFULLY FAST-TRAVELLED TO AREA \n" + chosenArea);
 
-            f1.displayArea();
+            switch (floorNumber){
+                case 1:
+                    f1.displayArea();
+                    break;
+                case 2:
+                    f2.displayArea();
+                    break;
+                case 3:
+                    f3.displayArea();
+                    break;
+            }
         } else {
             System.out.println("\nINVALID AREA SELECTION! ");
         }
@@ -83,11 +94,41 @@ public class GameLobby {
             String moveOption = scanner.next().toUpperCase();
 
             if (moveOption.equals("E")) {
-                break;
+                if(f1.isFastTravel() == true || f2.isFastTravel() == true || f3.isFastTravel() == true){
+                    break;
+                }
+                else {
+                    System.out.println("Cant go back if not in fast travel tile");
+                }
             }
 
-            f1.move(moveOption);
-            f1.displayArea();
+            switch (floorNumber){
+                case 1:
+                    f1.move(moveOption);
+                    f1.displayArea();
+                    if(f1.isDoor() == 2){
+                        floorNumber = 2;
+                    }
+                    break;
+                case 2:
+                    f2.move(moveOption);
+                    f2.displayArea();
+                    if(f2.isDoor() == 1){
+                        floorNumber = 1;
+                    }
+                    else if(f2.isDoor() == 3){
+                        floorNumber = 3;
+                    }
+                    break;
+                case 3:
+                    f3.move(moveOption);
+                    f3.displayArea();
+                    if(f3.isDoor() == 2){
+                        floorNumber = 2;
+                    }
+                    break;
+            }
+            
         }
         
     }
