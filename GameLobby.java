@@ -94,7 +94,8 @@ public class GameLobby {
             String moveOption = scanner.next().toUpperCase();
 
             if (moveOption.equals("E")) {
-                if(f1.isFastTravel() == true || f2.isFastTravel() == true || f3.isFastTravel() == true){
+                boolean hasFastTravel = f1.isFastTravel() || f2.isFastTravel() || f3.isFastTravel();
+                if(hasFastTravel){
                     break;
                 }
                 else {
