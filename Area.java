@@ -11,6 +11,7 @@ public class Area {
     private int[] doorTile1 = {1,0}, doorTile2 = {3, 6}, doorTile3 = {3, 0}, doorTile4 = {2, 6};
     private int[] fastTile1 = {1,6}, fastTile2 = {2,0};
     private int[] bossTile1 = {2, 3};
+    private GameLobby gameLobby;
     
 
     public Area(int width, int length, int startX, int startY, int floor){
@@ -88,15 +89,21 @@ public class Area {
         }
     }
 
-    public boolean isDoor(){
+    public int isDoor(){
         int column = position[1];
         int rows = position[0];
-        if(column == doorTile1[1] && rows == doorTile1[0]){
-            return true;
-        }
-        else{
-            return false;
-        }
+            if (column == doorTile1[1] && rows == doorTile1[0]) {
+                return 2;
+            } else if (column == doorTile2[1] && rows == doorTile2[0]) {
+                return 1;
+            } else if (column == doorTile3[1] && rows == doorTile3[0]) {
+                return 3;
+            } else if (column == doorTile4[1] && rows == doorTile4[0]) {
+                return 2;
+            }
+            else{
+                return -1;
+            }
     }
 
     public void move(String move){
@@ -119,6 +126,17 @@ public class Area {
         if(row >= 0 && row < width && column >= 0 && column < length) {
             position[1] = column;
             position[0] = row;
+        }
+    }
+
+    public boolean isFastTravel(){
+        int column = position[1];
+        int rows = position[0];
+        if((column == fastTile1[1] && rows == fastTile1[0]) || (column == fastTile2[1] && rows == fastTile2[0])){
+            return true;
+        }
+        else{
+            return false;
         }
     }
 }
