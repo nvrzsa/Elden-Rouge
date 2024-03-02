@@ -49,7 +49,7 @@ public class Character {
 
     public boolean setClass(String jobClass){
         switch (jobClass){
-            case "Vagabond":
+            case "1":
                 this.jobClass = "Vagabond";
                 this.level = 9;
                 this.health = 15;
@@ -59,7 +59,7 @@ public class Character {
                 this.strength = 14;
                 this.faith = 9;
                 return true;
-            case "Samurai":
+            case "2":
                 this.jobClass = "Samurai";
                 this.level = 9;
                 this.health = 12;
@@ -69,7 +69,7 @@ public class Character {
                 this.strength = 12;
                 this.faith = 9;
                 return true;
-            case "Warrior":
+            case "3":
                 this.jobClass = "Warrior";
                 this.level = 8;
                 this.health = 11;
@@ -79,7 +79,7 @@ public class Character {
                 this.strength = 10;
                 this.faith = 8;
                 return true;
-            case "Hero":
+            case "4":
                 this.jobClass = "Hero";
                 this.level = 7;
                 this.health = 14;
@@ -89,7 +89,7 @@ public class Character {
                 this.strength = 16;
                 this.faith = 8;
                 return true;
-            case "Astrologer":
+            case "5":
                 this.level = 6;
                 this.jobClass = "Astrologer";
                 this.health = 9;
@@ -99,7 +99,7 @@ public class Character {
                 this.strength = 8;
                 this.faith = 7;
                 return true;
-            case "Prophet":
+            case "6":
                 this.jobClass = "Prophet";
                 this.level = 7;
                 this.health = 10;

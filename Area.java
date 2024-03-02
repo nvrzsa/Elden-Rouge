@@ -21,7 +21,7 @@ public class Area {
         this.floor = floor;
     }
 
-    public void displayArea(){
+    public void displayArea() {
         if(floor == 1){
             for (int column = 0; column < length; column++){
                 for (int rows = 0; rows < width; rows++){
@@ -110,16 +110,16 @@ public class Area {
         int column = position[1];
         int row = position[0];
 
-        if(move.equals("UP")){
+        if(move.equals("W")){
             column -= 1;
         }
-        else if(move.equals("DOWN")){
+        else if(move.equals("S")){
             column += 1;
         }
-        else if(move.equals("LEFT")){
+        else if(move.equals("A")){
             row -= 1;
         }
-        else if(move.equals("RIGHT")){
+        else if(move.equals("D")){
             row += 1;
         }
 
