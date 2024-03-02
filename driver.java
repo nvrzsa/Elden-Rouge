@@ -1,3 +1,8 @@
+/**
+ * The main driver class for the Elden Rouge game.
+ * The driver class handles the game initialization and player setup.
+ */
+
 import java.util.Scanner;
 
 public class driver {

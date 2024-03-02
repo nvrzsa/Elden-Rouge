@@ -1,3 +1,7 @@
+/**
+ * The Character class represents a player character in the game.
+ */
+
 public class Character {
     private String name;
     private String jobClass;
@@ -8,6 +12,20 @@ public class Character {
     private int strength;
     private int intelligence;
     private int faith;
+
+    /**
+     * Constructs a Character object with the specified attributes.
+     *
+     * @param name         The name of the character.
+     * @param jobClass     The job class of the character.
+     * @param level        The level of the character.
+     * @param health       The health points of the character.
+     * @param endurance    The endurance attribute of the character.
+     * @param dexterity    The dexterity attribute of the character.
+     * @param strength     The strength attribute of the character.
+     * @param intelligence The intelligence attribute of the character.
+     * @param faith        The faith attribute of the character.
+     */
 
     public Character(String name, String jobClass, int level, int health,
                      int endurance, int dexterity, int strength,
@@ -23,6 +41,10 @@ public class Character {
         this.faith = faith;
     }
 
+    /**
+     * Displays the current stats of the character, including name, job class, level, and attributes.
+     */
+
     public void displayStats(){
         System.out.println("\nName: " + this.name);
         System.out.println("Job Class: " + this.jobClass);
@@ -35,17 +57,42 @@ public class Character {
         System.out.println("faith: " + this.faith);
     }
 
+    /**
+     * Sets the name of the character.
+     *
+     * @param name The new name of the character.
+     */
+
     public void setName(String name){
         this.name = name;
     }
+
+    /**
+     * Gets the name of the character.
+     *
+     * @return The name of the character.
+     */
 
     public String getName(){
         return this.name;
     }
 
+    /**
+     * Gets the level of the character.
+     *
+     * @return The level of the character.
+     */
+
     public int getLevel() {
         return this.level;
     }
+    
+    /**
+     * Sets the job class of the character based on the provided class code.
+     *
+     * @param jobClass The class code representing the desired job class.
+     * @return True if the job class is valid and set successfully, false otherwise.
+     */
 
     public boolean setClass(String jobClass){
         switch (jobClass){

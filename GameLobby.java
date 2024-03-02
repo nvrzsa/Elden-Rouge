@@ -1,15 +1,28 @@
 import java.util.Scanner;
 
+/**
+ * The GameLobby class represents the lobby where the player 
+ * can navigate and interact with different game features.
+ */
+
 public class GameLobby {
     private Character player;
     private Scanner scanner;
     private int currentAreaIndex;
     private int floorNumber = 1;
-    private Area currentArea;
 
     private Area f1;
     private Area f2;
     private Area f3;
+
+    /**
+     * Constructs a GameLobby object.
+     *
+     * @param player The player character.
+     * @param f1     The first floor of Area 1.
+     * @param f2     The second floor of Area 1.
+     * @param f3     The third floor of Area 1.
+     */
 
     public GameLobby(Character player, Area f1, Area f2, Area f3) {
         this.player = player;
@@ -19,6 +32,10 @@ public class GameLobby {
         this.f2 = f2;
         this.f3 = f3;
     }
+
+    /**
+     * Displays the main lobby menu and handles player choices.
+     */
 
     public void displayLobby() {
         Scanner scanner = new Scanner(System.in);
@@ -54,6 +71,10 @@ public class GameLobby {
             }
         }
     }
+
+    /**
+     * Initiates the Fast Travel feature, allowing the player to move between areas and floors.
+     */
 
     private void FastTravel() {
         Scanner scanner = new Scanner(System.in);
@@ -99,7 +120,7 @@ public class GameLobby {
                     break;
                 }
                 else {
-                    System.out.println("Cant go back if not in fast travel tile");
+                    System.out.println("FAST TRAVEL TILE NEEDED IN ORDER TO GO BACK!");
                 }
             }
 
@@ -128,27 +149,51 @@ public class GameLobby {
                         floorNumber = 2;
                     }
                     break;
-            }
-            
-        }
-        
+            }   
+        } 
     }
+
+    /**
+     * Checks if the chosen area index is valid and not locked.
+     *
+     * @param areaIndex The index of the chosen area.
+     * @return True if the area is valid and not locked, false otherwise.
+     */
 
     private boolean isValidArea(int areaIndex) {
         return areaIndex >= 1 && areaIndex <= 3 && !isAreaLocked(areaIndex);
     }
 
+    /**
+     * Checks if an area is locked.
+     *
+     * @param areaIndex The index of the area to check.
+     * @return True if the area is locked, false otherwise.
+     */
+
     private boolean isAreaLocked(int areaIndex) {
         return areaIndex == 3 && player.getLevel() < 10;
     }
 
+    /**
+     * Initiates the level-up feature.
+     */
+
     private void LevelUp() {
-        System.out.println("LEVEL UP!");
+        System.out.println("LEVEL UP COMING SOON!");
     }
+
+    /**
+     * Initiates the inventory feature.
+     */
 
     private void Inventory() {
         System.out.println("INVENTORY COMING SOON!");
     }
+
+    /**
+     * Initiates the shop feature.
+     */
 
     private void Shop() {
         System.out.println("SHOP COMING SOON!");

@@ -1,6 +1,10 @@
 import java.util.Scanner;
 import java.util.List;
 
+/**
+ * The Area class represents the specific areas in the game.
+ */
+
 public class Area {
     private int width;
     private int length;
@@ -11,30 +15,44 @@ public class Area {
     private int[] doorTile1 = {1,0}, doorTile2 = {3, 6}, doorTile3 = {3, 0}, doorTile4 = {2, 6};
     private int[] fastTile1 = {1,6}, fastTile2 = {2,0};
     private int[] bossTile1 = {2, 3};
-    private GameLobby gameLobby;
-    
 
-    public Area(int width, int length, int startX, int startY, int floor){
+    private GameLobby gameLobby;
+
+    /**
+     * Constructs an Area object with the specified dimensions, starting position, and floor.
+     *
+     * @param width    The width of the area.
+     * @param length   The length of the area.
+     * @param startX   The starting X-coordinate of the player.
+     * @param startY   The starting Y-coordinate of the player.
+     * @param floor    The floor level of the area.
+     */
+    
+    public Area (int width, int length, int startX, int startY, int floor) {
         this.width = width;
         this.length = length;
         this.position = new int[]{startX, startY};
         this.floor = floor;
     }
 
+    /**
+     * Displays the current state of the area, including the player's position, spawn tiles, doors, fast travel tiles, and boss tile.
+     */
+
     public void displayArea() {
-        if(floor == 1){
-            for (int column = 0; column < length; column++){
+        if (floor == 1){
+            for (int column = 0; column < length; column++) {
                 for (int rows = 0; rows < width; rows++){
-                    if(column == position[1] && rows == position[0]){
+                    if (column == position[1] && rows == position[0]) {
                         System.out.print(" P ");
                     }
-                    else if((column == spawnTile1[1] && rows == spawnTile1[0]) || (column == spawnTile2[1] && rows == spawnTile2[0])){
+                    else if((column == spawnTile1[1] && rows == spawnTile1[0]) || (column == spawnTile2[1] && rows == spawnTile2[0])) {
                         System.out.print(" ? ");
                     }
-                    else if(column == doorTile1[1] && rows == doorTile1[0]){
+                    else if(column == doorTile1[1] && rows == doorTile1[0]) {
                         System.out.print(" D ");
                     }
-                    else if(column == fastTile1[1] && rows == fastTile1[0]){
+                    else if(column == fastTile1[1] && rows == fastTile1[0]) {
                         System.out.print(" F ");
                     }
                     else {
@@ -65,19 +83,19 @@ public class Area {
             }
         }
 
-        else if(floor == 3){
-            for (int column = 0; column < length; column++){
+        else if (floor == 3){
+            for (int column = 0; column < length; column++) {
                 for (int rows = 0; rows < width; rows++){
-                    if(column == position[1] && rows == position[0]){
+                    if (column == position[1] && rows == position[0]) {
                         System.out.print(" P ");
                     }
-                    else if((column == bossTile1[1] && rows == bossTile1[0])){
+                    else if ((column == bossTile1[1] && rows == bossTile1[0])) {
                         System.out.print(" B ");
                     }
-                    else if(column == doorTile4[1] && rows == doorTile4[0]){
+                    else if (column == doorTile4[1] && rows == doorTile4[0]) {
                         System.out.print(" D ");
                     }
-                    else if(column == fastTile2[1] && rows == fastTile2[0]){
+                    else if (column == fastTile2[1] && rows == fastTile2[0]) {
                         System.out.print(" F ");
                     }
                     else {
@@ -89,7 +107,13 @@ public class Area {
         }
     }
 
-    public int isDoor(){
+    /**
+     * Checks if the player is near a door and returns the door's index.
+     *
+     * @return The door index (1, 2, 3) if the player is near a door, -1 otherwise.
+     */
+
+    public int isDoor() {
         int column = position[1];
         int rows = position[0];
             if (column == doorTile1[1] && rows == doorTile1[0]) {
@@ -101,41 +125,53 @@ public class Area {
             } else if (column == doorTile4[1] && rows == doorTile4[0]) {
                 return 2;
             }
-            else{
+            else {
                 return -1;
             }
     }
 
-    public void move(String move){
+    /**
+     * Moves the player within the area based on the specified direction.
+     *
+     * @param move The direction in which the player should move (W, S, A, D).
+     */
+
+    public void move(String move) {
         int column = position[1];
         int row = position[0];
 
-        if(move.equals("W")){
+        if (move.equals("W")) {
             column -= 1;
         }
-        else if(move.equals("S")){
+        else if (move.equals("S")) {
             column += 1;
         }
-        else if(move.equals("A")){
+        else if (move.equals("A")) {
             row -= 1;
         }
-        else if(move.equals("D")){
+        else if (move.equals("D")) {
             row += 1;
         }
 
-        if(row >= 0 && row < width && column >= 0 && column < length) {
+        if (row >= 0 && row < width && column >= 0 && column < length) {
             position[1] = column;
             position[0] = row;
         }
     }
 
+    /**
+     * Checks if the player is on a fast travel tile.
+     *
+     * @return True if the player is on a fast travel tile, false otherwise.
+     */
+
     public boolean isFastTravel(){
         int column = position[1];
         int rows = position[0];
-        if((column == fastTile1[1] && rows == fastTile1[0]) || (column == fastTile2[1] && rows == fastTile2[0])){
+        if ((column == fastTile1[1] && rows == fastTile1[0]) || (column == fastTile2[1] && rows == fastTile2[0])){
             return true;
         }
-        else{
+        else {
             return false;
         }
     }
